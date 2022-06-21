@@ -1,5 +1,6 @@
 import pygame
 class Ship:
+    # клас корабля
     def __init__(self, screen):
         # объявить и инициализировать экран, который мы приняли
         self.Screen = screen

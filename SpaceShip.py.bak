@@ -4,7 +4,6 @@ from settings import Settings
 from ship import Ship
 
 class SpaceShip:
-    # класс игры
     def __init__(self):
         # Инициализация движка для того, чтобы мы могли с ним работать
         pygame.init()

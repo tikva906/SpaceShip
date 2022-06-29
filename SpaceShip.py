@@ -20,12 +20,29 @@ class SpaceShip:
         # Создаем объект корабля
         self.ship = Ship(self.screen)
 
+    def CheckEvent(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            # проверка нажатия
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_d:
+                    self.ship.isRight = True
+                elif event.key == pygame.K_a:
+                    self.ship.isLeft = True
+            # проверка отпускания
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_d:
+                    self.ship.isRight = False
+                elif event.key == pygame.K_a:
+                    self.ship.isLeft = False
+
     def Start(self):
         while True:
             # Отслеживаем события клавиатуры и мыши
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            self.CheckEvent()
+            # Метод обновления корабля
+            self.ship.update()
             # Задаем цвет фона
             self.screen.fill(self.settings.colour)
             # Отрисовать корабль

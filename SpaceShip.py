@@ -30,12 +30,20 @@ class SpaceShip:
                     self.ship.isRight = True
                 elif event.key == pygame.K_a:
                     self.ship.isLeft = True
+                elif event.key == pygame.K_w:
+                    self.ship.isWhele = True
+                elif event.key == pygame.K_s:
+                    self.ship.isSat = True
             # проверка отпускания
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_d:
                     self.ship.isRight = False
                 elif event.key == pygame.K_a:
                     self.ship.isLeft = False
+                elif event.key == pygame.K_w:
+                    self.ship.isWhele = False
+                elif event.key == pygame.K_s:
+                    self.ship.isSat = False
 
     def Start(self):
         while True:

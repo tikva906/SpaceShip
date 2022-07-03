@@ -14,6 +14,8 @@ class Ship:
         self.rect.midbottom = self.ScreenRect.midbottom
         self.isRight = False
         self.isLeft = False
+        self.isWhele = False
+        self.isSat = False
     def Blitme(self):
         self.Screen.blit(self.image,self.rect)
 
@@ -22,3 +24,8 @@ class Ship:
             self.rect.x += 1
         if self.isLeft == True:
             self.rect.x -= 1
+        if self.isWhele == True:
+            self.rect.y -= 1
+        if self.isSat == True:
+            self.rect.y += 1
+

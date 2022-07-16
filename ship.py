@@ -20,12 +20,13 @@ class Ship:
         self.Screen.blit(self.image,self.rect)
 
     def update(self):
-        if self.isRight == True:
+        if self.isRight == True and self.rect.right <= self.ScreenRect.width:
             self.rect.x += 1
-        if self.isLeft == True:
+        if self.isLeft == True and self.rect.left >= 0:
             self.rect.x -= 1
-        if self.isWhele == True:
+        if self.isWhele == True and self.rect.top >= 0:
             self.rect.y -= 1
-        if self.isSat == True:
+        if self.isSat == True and self.rect.bottom <= self.ScreenRect.height:
             self.rect.y += 1
 
+        print(f"x: {self.rect.x}, y: {self.rect.y}")
